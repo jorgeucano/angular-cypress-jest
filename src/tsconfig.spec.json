@@ -11,8 +11,8 @@
     "polyfills.ts"
   ],
   "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
+    "app/**/*.spec.ts",
+    "app/**/*.d.ts"
   ],
-  "exclude": ["**/cypress", "../cypress/**/**"]
+  "exclude": ["cypress/**/*.spec.ts"]
 }

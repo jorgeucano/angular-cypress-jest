@@ -15,8 +15,8 @@ export class AppComponent {
   load = false;
   items: Observable<any>;
 
-  constructor(private readonly afs: AngularFirestore, public afAuth: AngularFireAuth) {
-    this.items = this.afs.collection(
+  constructor() {
+    /*this.items = this.afs.collection(
       'items', ref => ref.where('name', '==', 'pe')
     ).snapshotChanges().pipe(
       map(actions => actions.map(a => {
@@ -24,27 +24,27 @@ export class AppComponent {
         const id = a.payload.doc.id;
         return { id, ...data };
       }))
-    );
+    );*/
   }
 
   add(newItem: any) {
-    this.afs.collection('items').add(newItem)
+    /*this.afs.collection('items').add(newItem)
       .then(
         x => console.log(x)
-      );
+      );*/
   }
 
   modify(id) {
-    this.afs.doc('items/' + id).update({name: 'roberto'})
-      .then(
-        x => console.log(x)
-      );
-  }
+/*this.afs.doc('items/' + id).update({name: 'roberto'})
+  .then(
+    x => console.log(x)
+  );*/
+}
 
-  login() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-  }
-  logout() {
-    this.afAuth.auth.signOut();
-  }
+login() {
+// this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+}
+logout() {
+// this.afAuth.auth.signOut();
+}
 }

@@ -1,4 +1,4 @@
-<div *ngIf="afAuth.user | async as user; else showLogin">
+<!--div *ngIf="afAuth.user | async as user; else showLogin">
   <h1>Hello {{ user.displayName }}!</h1>
   <button (click)="logout()">Logout</button>
 </div>
@@ -13,7 +13,7 @@
   <li class="text" *ngFor="let item of items | async">
     {{item.name}} <button (click)="modify(item.id)">update</button>
   </li>
-</ul>
+</ul-->
 
 
 <!--The content below is only a placeholder and can be replaced.-->
@@ -34,13 +34,13 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-  <li>
+  <!--li>
     <h2><a [routerLink]="'/lazy'">lazy</a></h2>
     <h2><a [routerLink]="'/lazy2'">lazy 2</a></h2>
-  </li>
+  </li-->
 </ul>
 
-<div id="forClick" (click)="load = true">Hover to load TestModule</div>
+<!--div id="forClick" (click)="load = true">Hover to load TestModule</div>
 <hero-loader *ngIf="load" moduleName="src/app/image-lazy/image-lazy.module#ImageLazyModule"></hero-loader>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet-->
