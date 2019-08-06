@@ -20,7 +20,10 @@
   </li>
 </ul>
 
-<div id="forClick" (click)="load = true">Hover to load TestModule</div>
-<hero-loader *ngIf="load" moduleName="src/app/image-lazy/image-lazy.module#ImageLazyModule"></hero-loader>
+<div id="forClick" (click)="load = true">
+  Hover to load TestModule
+</div>
+<h3 *ngIf="load">Already clicked 🖱️!</h3>
+<!--<hero-loader *ngIf="load" moduleName="src/app/image-lazy/image-lazy.module#ImageLazyModule"></hero-loader>-->
 
 <router-outlet></router-outlet>
