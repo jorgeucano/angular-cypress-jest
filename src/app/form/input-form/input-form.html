@@ -1,0 +1,14 @@
+<div [formGroup]="form">
+  <label [attr.key]>{{question.label}}</label>
+  <div [ngSwitch]="question.controlType">
+    <input
+      *ngSwitchCase="'input'"
+      [id]="question.key"
+      required="{{question.required}}"
+      [placeholder]="question.placeholder"
+      [value]="question.value"
+      (change)="setValue($event, question.key)"
+    />
+  </div>
+  <div style="color: red;" *ngIf="!isValid">{{question.label}} is required</div>
+</div>

@@ -10,11 +10,16 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {GenericForm} from './form/generic-form';
+import {InputForm} from './form/input-form/input-form';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JorgeucanoComponent
+    JorgeucanoComponent,
+    GenericForm,
+    InputForm
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,9 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     HeroLoaderModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {auth} from 'firebase';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Color} from './interfaces/color';
 
 @Component({
   selector: 'app-root',
@@ -13,38 +10,34 @@ import {auth} from 'firebase';
 export class AppComponent {
   title = 'angular-cypress';
   load = false;
-  items: Observable<any>;
+
+  questions: any;
 
   constructor() {
-    /*this.items = this.afs.collection(
-      'items', ref => ref.where('name', '==', 'pe')
-    ).snapshotChanges().pipe(
-      map(actions => actions.map(a => {
-        const data = a.payload.doc.data();
-        const id = a.payload.doc.id;
-        return { id, ...data };
-      }))
-    );*/
+    this.questions = [
+      {
+        key: 'name',
+        label: 'First Name',
+        order: 1,
+        controlType: 'input',
+        required: true,
+        showAlert: false,
+        placeholder: 'Fill out your First Name',
+        alertMessage: 'Must be a valid First Name',
+        value: 'Jorge'
+      },
+      {
+        key: 'lastName',
+        label: 'last Name',
+        order: 1,
+        controlType: 'input',
+        required: true,
+        showAlert: false,
+        placeholder: 'Fill out your First Name',
+        alertMessage: 'Must be a valid First Name',
+        value: ''
+      }
+    ];
   }
 
-  add(newItem: any) {
-    /*this.afs.collection('items').add(newItem)
-      .then(
-        x => console.log(x)
-      );*/
-  }
-
-  modify(id) {
-/*this.afs.doc('items/' + id).update({name: 'roberto'})
-  .then(
-    x => console.log(x)
-  );*/
-}
-
-login() {
-// this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-}
-logout() {
-// this.afAuth.auth.signOut();
-}
 }

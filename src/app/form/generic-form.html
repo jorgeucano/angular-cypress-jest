@@ -1,0 +1,6 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div *ngFor="let question of questions">
+    <form-input [question]="question" [form]="form"></form-input>
+  </div>
+  <button type="submit" [disabled]="!form.valid" (click)="onSubmit()"> {{ name }}</button>
+</form>
