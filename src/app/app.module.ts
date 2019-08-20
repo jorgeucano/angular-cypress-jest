@@ -13,13 +13,15 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {GenericForm} from './form/generic-form';
 import {InputForm} from './form/input-form/input-form';
+import { PlaygroundComponent } from './playground/playground.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JorgeucanoComponent,
     GenericForm,
-    InputForm
+    InputForm,
+    PlaygroundComponent
   ],
   imports: [
     BrowserModule,

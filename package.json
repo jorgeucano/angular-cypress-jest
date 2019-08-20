@@ -8,13 +8,18 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "cypress run --spec 'cypress/integration/**/*' --browser chrome",
-    "test-jest": "jest"
+    "test-jest": "jest",
+    "playground": "angular-playground"
   },
   "private": true,
   "jest": {
     "preset": "jest-preset-angular",
-    "setupFilesAfterEnv": ["<rootDir>/setupJest.ts"],
-    "roots": ["src"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupJest.ts"
+    ],
+    "roots": [
+      "src"
+    ]
   },
   "dependencies": {
     "@angular/animations": "~8.1.0",
@@ -51,6 +56,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "angular-playground": "^6.0.1"
   }
 }
